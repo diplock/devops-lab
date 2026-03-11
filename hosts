@@ -1,0 +1,11 @@
+[automation]
+ubuntu-auto01 ansible_host=192.168.122.129 ansible_user=jmutaasa
+
+[production]
+ubuntu-prod01 ansible_host=192.168.122.238 ansible_user=jmutaasa
+
+[docker]
+alpine01 ansible_host=192.168.122.14 ansible_user=root ansible_python_interpreter=/usr/bin/python3
+
+[kubernetes]
+alpine02-ent ansible_host=192.168.122.69 ansible_user=taasa ansible_python_interpreter=/usr/bin/python3 ansible_become=true ansible_become_method=su ansible_become_user=root

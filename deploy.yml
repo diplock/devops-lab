@@ -1,0 +1,43 @@
+---
+- name: Configure Ubuntu production server
+  hosts: production
+  become: yes
+
+  tasks:
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Ensure nginx is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+
+- name: Configure Alpine docker host
+  hosts: docker
+  become: yes
+
+  tasks:
+
+    - name: Update apk repositories
+      apk:
+        update_cache: yes
+
+    - name: Install docker
+      apk:
+        name: docker
+        state: present
+
+    - name: Enable docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Deploy nginx container
+      command: docker run -d -p 8080:80 nginx
