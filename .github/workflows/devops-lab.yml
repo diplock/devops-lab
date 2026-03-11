@@ -17,4 +17,4 @@ jobs:
       run: |
         sudo apt update
         sudo apt install ansible -y
-        ansible-playbook ansible/deploy.yml --syntax-check
+        ansible-playbook deploy.yml --syntax-check
