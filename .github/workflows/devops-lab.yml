@@ -1,0 +1,20 @@
+name: DevOps Lab Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Check Ansible playbook syntax
+      run: |
+        sudo apt update
+        sudo apt install ansible -y
+        ansible-playbook ansible/deploy.yml --syntax-check
