@@ -1,29 +1,82 @@
 # DevOps Lab
 
-This repository contains my personal DevOps lab used to practice:
+This repository contains my personal DevOps lab used to practice modern infrastructure automation and observability.
+
+## Technologies Practiced
 
 - Ansible automation
 - Docker containers
 - Kubernetes (K3s)
-- GitHub Actions CI/CD
+- Prometheus monitoring
+- Grafana dashboards
+- Git and GitHub
+- CI/CD pipelines (GitHub Actions)
 - Infrastructure as Code
 
-## Infrastructure
+## Lab Infrastructure
 
 Control Node:
-Ubuntu VM running KVM
+Ubuntu VM running on KVM virtualization.
 
 Managed Nodes:
+
 - Alpine Linux VM (Kubernetes Control Plane)
-- Alpine Linux VM (Worker Node)
+- Alpine Linux VM (Kubernetes Worker Node)
 
-## Tools Used
+## DevOps Components
 
-- Ansible
-- Docker
-- K3s Kubernetes
-- GitHub Actions
-- Git
+### Automation
 
-## Author
-Joseph Mutaasa
+Server configuration using Ansible playbooks located in:
+
+These playbooks automate:
+
+- Nginx installation
+- Docker host setup
+- Container deployment
+
+### Containerization
+
+Docker is used for container workloads and experimentation.
+
+### Kubernetes
+
+A lightweight Kubernetes cluster is deployed using **:contentReference[oaicite:1]{index=1}**.
+
+### Monitoring Stack
+
+Cluster monitoring implemented using:
+
+- **:contentReference[oaicite:2]{index=2}**
+- **:contentReference[oaicite:3]{index=3}**
+- **:contentReference[oaicite:4]{index=4}**
+
+Metrics collected include:
+
+- Node CPU usage
+- Memory usage
+- Network traffic
+- Disk IO
+
+### CI/CD
+
+Automation pipelines using **:contentReference[oaicite:5]{index=5}**.
+
+## Lab Goals
+
+This lab is used to practice real-world DevOps engineering skills including:
+
+- Infrastructure automation
+- Kubernetes cluster management
+- Observability and monitoring
+- Troubleshooting distributed systems
+- Continuous integration and deployment
+
+## Future Improvements
+
+Planned additions:
+
+- kube-state-metrics
+- Alertmanager alerts
+- Kubernetes dashboards
+- Terraform infrastructure provisioning
